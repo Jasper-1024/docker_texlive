@@ -1,0 +1,102 @@
+{
+    "name": "Latex",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "texlive",
+    "workspaceFolder": "/root", //工作目录
+    "extensions": [ //安装的拓展
+        "james-yu.latex-workshop"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash", //默认容器终端
+        "latex-workshop.editor.formatOnSave": true, //保存时自动格式化
+        "latex-workshop.view.pdf.viewer": "tab", //内部标签页打开
+        "latex-workshop.latex.autoBuild.run": "never", // 不自动编译
+        "latex-workshop.intellisense.package.enabled": true, //自动完成
+        "latex-workshop.showContextMenu": true, //右键菜单
+        "editor.wordWrap": "on", // 自动换行
+        "latex-workshop.latex.recipes": [
+            {
+                "name": "latexmk",
+                "tools": [
+                    "latexmk"
+                ]
+            },
+            {
+                "name": "xelate×2",
+                "tools": [
+                    "xelatex",
+                    "xelatex"
+                ]
+            },
+            {
+                "name": "xelatex ➞ bibtex ➞ xelatex`×2",
+                "tools": [
+                    "xelatex",
+                    "bibtex",
+                    "xelatex",
+                    "xelatex"
+                ]
+            }
+        ],
+        "latex-workshop.latex.tools": [
+            {
+                "name": "latexmk",
+                "command": "latexmk",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "-xelatex",
+                    "-outdir=%OUTDIR%",
+                    "%DOCFILE%" //相对路径
+                ],
+                "env": {}
+            },
+            {
+                "name": "xelatex",
+                "command": "xelatex",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "%DOCFILE%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "bibtex", //参考文献
+                "command": "bibtex",
+                "args": [
+                    "%DOCFILE%"
+                ],
+                "env": {}
+            }
+        ],
+        "latex-workshop.latex.clean.fileTypes": [ //设定清理文件的类型  
+            "*.aux",
+            "*.bbl",
+            "*.blg",
+            "*.idx",
+            "*.ind",
+            "*.lof",
+            "*.lot",
+            "*.out",
+            "*.toc",
+            "*.acn",
+            "*.acr",
+            "*.alg",
+            "*.glg",
+            "*.glo",
+            "*.gls",
+            "*.ist",
+            "*.fls",
+            "*.log",
+            "*.fdb_latexmk",
+            "*.nav",
+            "*.snm",
+            //"*.synctex.gz"  //避免双向搜索失效
+        ]
+    }
+}
