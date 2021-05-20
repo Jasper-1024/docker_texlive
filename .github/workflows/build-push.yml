@@ -48,5 +48,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            jasperhale/docker-texlive:latest
-            jasperhale/docker-texlive:${{ steps.vars.outputs.tag }}
+            ${IMAGE_ID}:latest
+            ${IMAGE_ID}:${{ steps.vars.outputs.tag }}
