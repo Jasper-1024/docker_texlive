@@ -2,8 +2,8 @@ version: "3.7"
 services:
   texlive:
     # build: ./
-    image: jasperhale/texlive:latest
+    image: jasperhale/docker-texlive:latest
     volumes:
-      - ../:/root
+      - ../:/root/work
     # 避免容器退出
     command: /bin/sh -c "while sleep 1000; do :; done"

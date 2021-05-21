@@ -4,13 +4,13 @@
         "docker-compose.yml"
     ],
     "service": "texlive",
-    "workspaceFolder": "/root", //工作目录
+    "workspaceFolder": "/root/work", //工作目录
     "extensions": [ //安装的拓展
         "james-yu.latex-workshop"
     ],
     "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash", //默认容器终端
-        "latex-workshop.editor.formatOnSave": true, //保存时自动格式化
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "latex-workshop.editor.formatOnSave": true,//保存时自动格式化
         "latex-workshop.view.pdf.viewer": "tab", //内部标签页打开
         "latex-workshop.latex.autoBuild.run": "never", // 不自动编译
         "latex-workshop.intellisense.package.enabled": true, //自动完成
