@@ -2,7 +2,7 @@ version: "3.7"
 services:
   texlive:
     # build: ./
-    image: jasperhale/docker-texlive:latest
+    image: jasperhale/texlive:latest
     volumes:
       - ../:/root/work
     # 避免容器退出
