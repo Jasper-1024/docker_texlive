@@ -54,4 +54,6 @@ RUN apt-get update && \
 
 ENV PATH="/usr/local/texlive/${VERSION}/bin/x86_64-linux:${PATH}"
 
-CMD ["/bin/bash"]
+CMD ["/bin/sh"]
+
+# RUN pdflatex --version
